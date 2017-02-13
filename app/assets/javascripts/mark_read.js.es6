@@ -8,14 +8,12 @@ function markAsRead(e) {
   var $link = $(this).parents('td').siblings('.url').children().html();
   console.log($link);
 
-  // var linkId = $link.data('link-id');
-  //
-  // $.ajax({
-  //   type: "PATCH",
-  //   url: "/api/v1/links/" + linkId,
-  //   data: { read: true },
-  // }).then(updateLinkStatus)
-  //   .fail(displayFailure);
+  $.ajax({
+    type: "POST",
+    url: "https://enigmatic-reaches-33452.herokuapp.com/api/v1/reads",
+    headers: { url: $link }
+  }).then(updateLinkStatus)
+    .fail(displayFailure);
 }
 
 function updateLinkStatus(link) {
