@@ -13,6 +13,9 @@
       <h4 id='user-id'>Logged in as <%= @current_user.email %></h4>
     <% end %>
   </div>
+  <% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
+  <% end %>
   <div class="container">
     <%= yield %>
   </div>
