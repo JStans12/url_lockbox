@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-  $("#read").click(markAsRead)
+  $(".read").click(markAsRead)
 })
 
 function markAsRead(e) {
