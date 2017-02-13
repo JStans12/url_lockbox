@@ -1,19 +1,21 @@
 $( document ).ready(function(){
-  $("body").on("click", ".mark-as-read", markAsRead)
+  $("#read").click(markAsRead)
 })
 
 function markAsRead(e) {
   e.preventDefault();
 
-  var $link = $(this).parents('.link');
-  var linkId = $link.data('link-id');
+  var $link = $(this).parents('td').siblings('.url').children().html();
+  console.log($link);
 
-  $.ajax({
-    type: "PATCH",
-    url: "/api/v1/links/" + linkId,
-    data: { read: true },
-  }).then(updateLinkStatus)
-    .fail(displayFailure);
+  // var linkId = $link.data('link-id');
+  //
+  // $.ajax({
+  //   type: "PATCH",
+  //   url: "/api/v1/links/" + linkId,
+  //   data: { read: true },
+  // }).then(updateLinkStatus)
+  //   .fail(displayFailure);
 }
 
 function updateLinkStatus(link) {
