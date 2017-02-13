@@ -5,4 +5,15 @@
     Url: <%= text_field_tag :url %>
     <%= submit_tag 'Submit' %>
   <% end %>
+  <br>
+  <h4>My Links</h4>
+  <table id='links-table'>
+    <th class='title'>Title</th>
+    <% @current_user.links.each do |link| %>
+      <tr>
+        <td class='title'><a href=<%= link.url %>><%= link.title %></a></td>
+        <td class='mark-read'>mark read</td>
+      </tr>
+    <% end %>
+  </table>
 </div>

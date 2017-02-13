@@ -7,6 +7,7 @@ class LinksController < ApplicationController
   def create
     link = Link.new(link_params)
     if link.save
+      current_user.links << link
       flash[:success] = "new link created"
       redirect_to root_path
     else
