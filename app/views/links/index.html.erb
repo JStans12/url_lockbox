@@ -8,10 +8,11 @@
   <br>
   <h4>My Links</h4>
   <table id='links-table'>
-    <th class='title'>Title</th>
+    <th class='title'>Title</th><th class='url'>Url</th>
     <% @current_user.links.each do |link| %>
       <tr>
-        <td class='title'><a href=<%= link.url %>><%= link.title %></a></td>
+        <td class='title'><%= link.title %></td>
+        <td class='url'><a href=<%= link.url %>><%= link.url %></a></td>
         <td class='mark-read'>mark read</td>
       </tr>
     <% end %>
