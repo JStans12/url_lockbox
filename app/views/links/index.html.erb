@@ -1,1 +1,8 @@
-Hello
+<div class='page-container'>
+  <%= form_tag '/links' do %>
+    <h4>Submit a New Link</h4>
+    Title: <%= text_field_tag :title %>
+    Url: <%= text_field_tag :url %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+</div>
