@@ -4,7 +4,6 @@ RSpec.describe Link, type: :model do
   describe "validations" do
     it { should validate_presence_of :title }
     it { should validate_presence_of :url }
-    it { should validate_uniqueness_of :url }
 
     it "should validate url validity" do
       good = Link.new(title: "things", url: "http://www.things.com")
