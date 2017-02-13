@@ -4,12 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-
-  end
-
-  private
-
-    def user_params
-      params.permit(:email, :password, :password_confirmation)
+    if user = User.find_by(email: params[:email])
+      if user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to root_path
+      else
+      end
+    else
     end
+  end
 end

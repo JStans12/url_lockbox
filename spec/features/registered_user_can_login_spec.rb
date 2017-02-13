@@ -6,7 +6,7 @@ RSpec.describe "registered user" do
 
     visit '/'
     within('#login') do
-      fill_in "email", with: "jim@example.com"
+      fill_in "email", with: user.email
       fill_in "password", with: "password"
       click_on "Login"
     end
