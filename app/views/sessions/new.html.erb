@@ -1,1 +1,18 @@
-new session
+<div class='page-container'>
+<h3>Login or Sign Up</h3>
+
+<%= form_tag do %>
+  <h4>Login</h4>
+  Email: <%= text_field_tag :email %>
+  Password: <%= text_field_tag :password %>
+  <%= submit_tag 'Login' %>
+<% end %>
+<br>
+<%= form_tag '/users' do %>
+  <h4>Sign Up</h4>
+  Email: <%= text_field_tag :email %>
+  Password: <%= text_field_tag :password %>
+  Password Confirmation: <%= text_field_tag :password_confirmation %>
+  <%= submit_tag 'Sign Up' %>
+<% end %>
+</div>
