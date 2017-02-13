@@ -10,7 +10,7 @@
   <div class='nav'>
     <h3 id='header'>Url Lockbox</h3>
     <% if @current_user %>
-      <h4 id='user-id'>Logged in as <%= @current_user.email %></h4>
+      <h4 id='user-id'><%= link_to "Log Out #{@current_user.email}", '/session', method: :delete %></h4>
     <% end %>
   </div>
   <% if flash[:error] %>

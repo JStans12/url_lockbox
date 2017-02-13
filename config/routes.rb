@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   post '/users', to: 'users#create'
+  delete '/session', to: 'sessions#destroy'
 
   resources :links, only: [:index]
 
