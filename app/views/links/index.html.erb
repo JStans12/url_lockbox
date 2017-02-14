@@ -13,7 +13,11 @@
       <tr data-link-id=<%= link.id %>>
         <td class='title'><%= link.title %></td>
         <td class='url'><a href=<%= link.url %>><%= link.url %></a></td>
-        <td class='mark-read'><button class='read'>mark read</button></td>
+        <% unless link.read %>
+          <td class='mark-read'><button class='read'>mark read</button></td>
+        <% else %>
+          <td class='mark-read'>finished</td>
+        <% end %>
       </tr>
     <% end %>
   </table>
