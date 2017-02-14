@@ -6,20 +6,20 @@ function markAsRead(e) {
   e.preventDefault();
 
   var $link = $(this).parents('td').siblings('.url').children().html();
-  console.log($link);
+  var linkId = $(this).parents('tr').data('link-id');
+  console.log(linkId);
 
   $.ajax({
     type: "POST",
     url: "https://enigmatic-reaches-33452.herokuapp.com/api/v1/reads",
     headers: { url: $link }
-  }).then(updateLinkStatus)
-    .fail(displayFailure);
-}
+  }).then(console.log('it worked!'))
+    .fail(console.log('something went wrong!'));
 
-function updateLinkStatus(link) {
-  $(`.link[data-link-id=${link.id}]`).find(".read-status").text(link.read);
-}
-
-function displayFailure(failureData){
-  console.log("FAILED attempt to update Link: " + failureData.responseText);
+  $.ajax({
+    type: "POST",
+    url: "/api/v1/links",
+    data: { id: linkId }
+  }).then(console.log('you read a thing!'))
+    .fail(console.log('you didn`t read a thing!'));
 }

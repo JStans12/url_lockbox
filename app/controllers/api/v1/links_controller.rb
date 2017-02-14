@@ -1,5 +1,11 @@
 class Api::V1::LinksController < ApplicationController
 
+  def read
+    link = Link.find(params[:id])
+    link.read = true
+    link.save
+  end
+
   def update
     @link = Link.find(params[:id])
     if @link.update_attributes(link_params)

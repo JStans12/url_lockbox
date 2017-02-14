@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :links, only: [:update]
+      post '/links', to: 'links#read'
     end
   end
 end

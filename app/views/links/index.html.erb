@@ -10,7 +10,7 @@
   <table id='links-table'>
     <th class='title'>Title</th><th class='url'>Url</th>
     <% @current_user.links.each do |link| %>
-      <tr>
+      <tr data-link-id=<%= link.id %>>
         <td class='title'><%= link.title %></td>
         <td class='url'><a href=<%= link.url %>><%= link.url %></a></td>
         <td class='mark-read'><button class='read'>mark read</button></td>
