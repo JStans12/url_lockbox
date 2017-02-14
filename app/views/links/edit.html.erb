@@ -1,0 +1,10 @@
+<div class="page-container">
+
+  <h4>Edit Link</h4>
+  <%= form_tag "/links/#{@link.id}", method: 'put' do %>
+    Title: <%= text_field_tag :title, @link.title %>
+    Url: <%= text_field_tag :url, @link.url %>
+  <%= submit_tag 'Submit' %>
+  <% end %>
+
+</div>

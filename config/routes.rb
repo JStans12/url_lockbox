@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   delete '/session', to: 'sessions#destroy'
   post '/links', to: 'links#create'
+  get '/links/:id/edit', to: 'links#edit'
+  put '/links/:id', to: 'links#update'
 
   resources :links, only: [:index]
 
