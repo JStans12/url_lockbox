@@ -7,7 +7,7 @@ function markAsRead(e) {
 
   var $link = $(this).parents('td').siblings('.url').children().html();
   var linkId = $(this).parents('tr').data('link-id');
-  console.log(linkId);
+  $(this).parents('td').html('finished');
 
   $.ajax({
     type: "POST",

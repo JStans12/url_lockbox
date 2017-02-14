@@ -10,6 +10,7 @@ RSpec.describe "registered user" do
       fill_in "password", with: "password"
       click_on "Login"
     end
+
     expect(page).to have_content("Log Out #{user.email}")
   end
 
